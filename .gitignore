@@ -13,6 +13,7 @@
 # Intellij Files
 .idea/
 Ecommerce-Framework.iml
+/target/
 
 
 # Package Files #
