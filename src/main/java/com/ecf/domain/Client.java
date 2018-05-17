@@ -14,6 +14,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -23,7 +24,7 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 @Entity
 @Table(name = "CLIENTS")
 //@JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="id",scope = Client.class)
-public class Client implements java.io.Serializable {
+public class Client {
 
     @Id @GeneratedValue(strategy=GenerationType.AUTO)
     @Column(name = "ID")
@@ -31,7 +32,9 @@ public class Client implements java.io.Serializable {
     
     @Column(name = "NAME", nullable = false)
 	private String name;
-	
+
+
+
 	public Client() {
 	}
 
