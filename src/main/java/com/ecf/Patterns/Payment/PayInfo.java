@@ -7,6 +7,15 @@ public class PayInfo {
     private long creditNo;
     private Address address;
     private paymentType payType;
+    private ShippingInfo ShippingInfo;
+
+    public com.ecf.Patterns.Payment.ShippingInfo getShippingInfo() {
+        return ShippingInfo;
+    }
+
+    public void setShippingInfo(com.ecf.Patterns.Payment.ShippingInfo shippingInfo) {
+        ShippingInfo = shippingInfo;
+    }
 
     public paymentType getPayType() {
         return payType;

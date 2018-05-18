@@ -2,7 +2,7 @@ package com.ecf.Patterns.Logging;
 
 import java.time.LocalTime;
 
-public class Loginfo {
+public class LogInfo {
     private long Id;
     private String Message;
     private String sender;
