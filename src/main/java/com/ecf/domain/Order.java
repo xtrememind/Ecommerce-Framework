@@ -19,6 +19,9 @@ public class Order {
     @OneToMany(mappedBy="order",cascade=CascadeType.ALL, fetch=FetchType.EAGER)
     private Set<OrderItems> orderItems;
 
+    @Column(name = "TOTALAMOUNT")
+    private long totalAmount;
+
     public Order() { }
 
     public Integer getId() { return id; }
@@ -27,4 +30,6 @@ public class Order {
     public void setClient(Client client) { this.client = client; }
     public Set<OrderItems> getOrderItems() { return orderItems; }
     public void setOrderItems(Set<OrderItems> orderItems) { this.orderItems = orderItems; }
+    public long getTotalAmount() { return totalAmount; }
+    public void setTotalAmount(long totalAmount) { this.totalAmount = totalAmount; }
 }
