@@ -1,10 +1,5 @@
 package com.app;
 
-import com.ecf.domain.Address;
-import com.ecf.domain.Client;
-import com.ecf.registration.UserRegisterFactory;
-import com.ecf.registration.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,11 +11,12 @@ public class HomeController {
 //    @Autowired
 //    private UserRepository userRepository;
 
+
     @GetMapping("/greeting")
     public String greeting(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
         model.addAttribute("name", name);
-        UserRegisterFactory rec =new UserRegisterFactory();
-        rec.createUser("d");
+        //UserRegisterFactory rec =new UserRegisterFactory();
+//        rec.createUser("d");
 
 //        Client client =new Client();
 //        client.setName("Test");

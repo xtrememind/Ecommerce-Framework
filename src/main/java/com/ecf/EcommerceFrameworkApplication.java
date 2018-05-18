@@ -1,10 +1,5 @@
 package com.ecf;
 
-import com.ecf.domain.Address;
-import com.ecf.domain.Client;
-import com.ecf.registration.UserRepository;
-import com.ecf.registration.models.User;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;

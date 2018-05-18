@@ -1,28 +1,15 @@
 package com.ecf.domain;
-import javax.persistence.*;
 
-@Entity
-@Table(name = "ORDERITEMS")
+import com.ecf.Orders.Order;
+
 public class OrderItems {
-    @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
-    @Column(name = "ID")
     private Integer id;
-    @Column(name = "PRICE")
     private double price;
-    @Column(name = "QUANTITY")
     private Integer quantity;
-
-    @ManyToOne()
-    @JoinColumn()
     private Product product;
-
-    @ManyToOne()
-    @JoinColumn()
     private Order order;
 
     public OrderItems() { }
-
     public Integer getId() { return id; }
     public void setId(Integer id) { this.id = id; }
     public Integer getQuantity() { return quantity; }

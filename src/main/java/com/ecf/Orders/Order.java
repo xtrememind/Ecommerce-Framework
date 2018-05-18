@@ -1,29 +1,17 @@
-package com.ecf.domain;
+package com.ecf.Orders;
 
-import javax.persistence.*;
+import com.ecf.domain.Client;
+import com.ecf.domain.OrderItems;
+
 import java.util.Set;
 
-@Entity
-@Table(name = "ORDERS")
 public class Order {
-
-    @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
-    @Column(name = "ID")
     private Integer id;
-
-    @ManyToOne()
-    @JoinColumn()
     private Client client;
-
-    @OneToMany(mappedBy="order",cascade=CascadeType.ALL, fetch=FetchType.EAGER)
     private Set<OrderItems> orderItems;
-
-    @Column(name = "TOTALAMOUNT")
     private long totalAmount;
 
     public Order() { }
-
     public Integer getId() { return id; }
     public void setId(Integer id) { this.id = id; }
     public Client getClient() { return client; }

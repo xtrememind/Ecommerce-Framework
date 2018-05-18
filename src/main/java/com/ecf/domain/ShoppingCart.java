@@ -1,24 +1,11 @@
 package com.ecf.domain;
 
-import javax.persistence.*;
-
-@Entity
-@Table(name = "CARTS")
 public class ShoppingCart {
 
-    @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
-    @Column(name = "ID")
     private Integer id;
-    @Column(name = "QUANTITY")
     private Integer quantity;
-    @Column(name = "PRICE")
     private double price;
-    @ManyToOne()
-    @JoinColumn()
     private Client client;
-    @ManyToOne()
-    @JoinColumn()
     private Product product;
 
     public ShoppingCart() { }
