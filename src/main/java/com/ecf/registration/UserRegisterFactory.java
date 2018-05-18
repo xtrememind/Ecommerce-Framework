@@ -9,8 +9,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class UserRegisterFactory implements RegisterFactory {
 
-    @Autowired
-    private UserRepository userRepository;
+
+
+    public UserRegisterFactory(){
+    }
 
     @Override
     public User createUser(String type) {
@@ -25,11 +27,7 @@ public class UserRegisterFactory implements RegisterFactory {
 //		client.setBillingAddress(add);
 //		client.setShippingAddress(add);
 //
-		if(userRepository!=null)
-		userRepository.save(add);
 
         return null;
     }
-
-
 }
