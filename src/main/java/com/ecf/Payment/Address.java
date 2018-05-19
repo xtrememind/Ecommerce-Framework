@@ -1,4 +1,4 @@
-package com.ecf.Patterns.Payment;
+package com.ecf.Payment;
 
 public class Address
 {
