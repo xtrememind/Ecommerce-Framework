@@ -3,15 +3,41 @@ package com.ecf.domain;
 public class Product {
     private Integer id;
     private String name;
-    private Category category;
+    private String description;
+    private double price;
+
+
+    public Product(String name, String description, double price) {
+        this.name = name;
+        this.description = description;
+        this.price = price;
+    }
 
     public Integer getId() {
         return id;
     }
+
     public String getName() {
         return name;
     }
-    public void setName(String name) { this.name = name; }
-    public Category getCategory() { return category; }
-    public void setCategory(Category category) { this.category = category; }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
 }
