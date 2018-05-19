@@ -1,4 +1,4 @@
-package com.ecf.Patterns.Logging;
+package com.ecf.Logging;
 
 public class Databaselog extends Logging {
     @Override

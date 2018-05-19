@@ -1,4 +1,4 @@
-package com.ecf.Patterns.Logging;
+package com.ecf.Logging;
 
 public class Consolelog extends Logging {
     @Override

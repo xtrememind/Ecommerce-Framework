@@ -1,4 +1,4 @@
-package com.ecf.Patterns.Payment;
+package com.ecf.Payment;
 
 public class PayInfo {
     private long id;
@@ -9,11 +9,11 @@ public class PayInfo {
     private paymentType payType;
     private ShippingInfo ShippingInfo;
 
-    public com.ecf.Patterns.Payment.ShippingInfo getShippingInfo() {
+    public com.ecf.Payment.ShippingInfo getShippingInfo() {
         return ShippingInfo;
     }
 
-    public void setShippingInfo(com.ecf.Patterns.Payment.ShippingInfo shippingInfo) {
+    public void setShippingInfo(com.ecf.Payment.ShippingInfo shippingInfo) {
         ShippingInfo = shippingInfo;
     }
 
