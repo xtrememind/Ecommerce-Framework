@@ -58,4 +58,8 @@ public class StoreRepository {
             return null;
         }
     }
+
+    public List<Category> getCategoriesList() {
+        return categoriesList;
+    }
 }
