@@ -5,7 +5,10 @@ public class RangeValidator implements Validator {
 
     private Validator nextValidator;
     private long min;
-    //private long max;
+
+    public RangeValidator(long min) {
+        this.min = min;
+    }
 
     @Override
     public void setNextValidator(Validator validator) {
@@ -14,6 +17,7 @@ public class RangeValidator implements Validator {
 
     @Override
     public void validate(Request request) {
+        request.setValid(true);
         if(request.getValue().length()<this.min) {
             request.setValid(false);
             request.setError(String.format("%s should have at least %d characters", request.getControlName(),this.min));

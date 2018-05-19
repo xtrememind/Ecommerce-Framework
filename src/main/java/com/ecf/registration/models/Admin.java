@@ -1,27 +1,11 @@
 package com.ecf.registration.models;
 
-public class Admin implements User {
+public class Admin extends User {
 
-    private Integer id;
-    public Integer getId() {
-        return id;
+    public Admin(String name,String pass,boolean isAdmin ) {
+        this.password=pass;
+        this.name=name;
+        this.isAdmin=isAdmin;
+        this.id=(int)(Math.random());
     }
-    public void setId(Integer id) {
-        this.id = id;
-    }
-    public String getName() {
-        return name;
-    }
-    public void setName(String name) {
-        this.name = name;
-    }
-    public String getPassword() {
-        return password;
-    }
-    public void setPassword(String password) {
-        this.password = password;
-    }
-    private String name;
-    private String password;
-    public Admin(){}
 }
