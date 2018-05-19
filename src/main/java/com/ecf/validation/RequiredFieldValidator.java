@@ -12,6 +12,7 @@ public class RequiredFieldValidator implements Validator {
 
     @Override
     public void validate(Request request) {
+        request.setValid(true);
         if(request.getValue().isEmpty()) {
             request.setValid(false);
             request.setError(String.format("%s can not be empty", request.getControlName()));

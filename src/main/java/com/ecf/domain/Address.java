@@ -1,17 +1,18 @@
 package com.ecf.domain;
 
 public class Address {
-    private Integer id;
+
     private String streetName;
     private String city;
     private String state;
     public Address(){}
-    public Integer getId() {
-        return id;
+
+    public Address(String stName,String city,String state){
+        this.streetName=stName;
+        this.city=city;
+        this.state=state;
     }
-    public void setId(Integer id) {
-        this.id = id;
-    }
+
     public String getStreetName() {
         return streetName;
     }
