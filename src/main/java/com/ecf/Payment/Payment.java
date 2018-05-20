@@ -1,10 +1,14 @@
 package com.ecf.Payment;
 
+import com.ecf.Payment.Strategy.CreditCardStrategy;
+import com.ecf.Payment.Strategy.IPaymentStrategy;
+import com.ecf.Payment.Strategy.PaypalStrategy;
+
 public abstract class Payment {
 
-    PayInfo payinfo;
+    PaymentInfo payinfo;
 
-    public void SetPaymentInfo(PayInfo info)
+    public void SetPaymentInfo(PaymentInfo info)
     {
         payinfo = info;
     }
@@ -13,22 +17,23 @@ public abstract class Payment {
 
     public abstract long CalcTaxes();
 
-    public final boolean ProcessPayment() {
-        // payment process goes here
-        long shippingfee = CalcShippingFee();
+    public final boolean processPayment() {
+        long shippingFee = CalcShippingFee();
         long tax = CalcTaxes();
 
         if (payinfo.getPayType() == paymentType.creditCard) {
-            // process credit card
+            IPaymentStrategy cc = new CreditCardStrategy(payinfo.getUserName(), payinfo.getCreditNo(), payinfo.getCcv(),payinfo.getExpiryDate());
+            cc.pay(shippingFee + tax + payinfo.getAmount());
             return true;
         } else if (payinfo.getPayType() == paymentType.PayPal) {
-            // process paypal
+            IPaymentStrategy payPal = new PaypalStrategy(payinfo.getEmail(), payinfo.getPassword());
+            payPal.pay(shippingFee + tax + payinfo.getAmount());
             return true;
         }
         else
         {
-            // process another types
-            return true;
+            return false;
         }
     }
 }
+

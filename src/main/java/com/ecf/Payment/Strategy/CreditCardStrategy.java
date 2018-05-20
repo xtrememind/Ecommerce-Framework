@@ -1,15 +1,15 @@
-package com.ecf.ShoppingCart;
+package com.ecf.Payment.Strategy;
 
 public class CreditCardStrategy implements IPaymentStrategy {
 
     private String name;
     private String cardNumber;
-    private String cvv;
+    private int cvv;
     private String dateOfExpiry;
 
-    public CreditCardStrategy(String nm, String ccNum, String cvv, String expiryDate){
-        this.name=nm;
-        this.cardNumber=ccNum;
+    public CreditCardStrategy(String clientName, String ccNumber, int cvv, String expiryDate){
+        this.name=clientName;
+        this.cardNumber=ccNumber;
         this.cvv=cvv;
         this.dateOfExpiry=expiryDate;
     }

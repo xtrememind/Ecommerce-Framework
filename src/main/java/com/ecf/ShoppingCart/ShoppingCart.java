@@ -1,5 +1,6 @@
 package com.ecf.ShoppingCart;
 
+import com.ecf.Payment.Strategy.IPaymentStrategy;
 import com.ecf.domain.Client;
 
 import java.util.ArrayList;

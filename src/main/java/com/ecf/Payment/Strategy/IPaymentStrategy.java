@@ -1,4 +1,4 @@
-package com.ecf.ShoppingCart;
+package com.ecf.Payment.Strategy;
 
 public interface IPaymentStrategy {
 

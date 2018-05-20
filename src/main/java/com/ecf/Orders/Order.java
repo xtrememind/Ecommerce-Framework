@@ -2,10 +2,8 @@ package com.ecf.Orders;
 
 import com.ecf.ShoppingCart.Item;
 import com.ecf.domain.Client;
-import com.ecf.domain.OrderItems;
 
 import java.util.List;
-import java.util.Set;
 
 public class Order {
     private Integer id;

@@ -6,6 +6,15 @@ public class Item {
     private Product product;
     private Integer quantity;
     private double price;
+    private double priceAfterDiscount;
+
+    public double getPriceAfterDiscount() {
+        return priceAfterDiscount;
+    }
+
+    public void setPriceAfterDiscount(double priceAfterDiscount) {
+        this.priceAfterDiscount = priceAfterDiscount;
+    }
 
     public Product getProduct() {
         return product;
