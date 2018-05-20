@@ -1,11 +1,12 @@
 package com.ecf.Payment;
 
+import com.ecf.domain.Address;
+
 public class ShippingInfo {
     private Address address;
     private long fees;
 
-    public Address getAddress()
-    {
+    public Address getAddress() {
         return address;
     }
 
