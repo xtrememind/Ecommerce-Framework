@@ -1,5 +1,6 @@
 package com.ecf.domain;
 
+import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;
 
@@ -14,6 +15,8 @@ public class Category {
         Random rand = new Random();
         id = rand.nextInt();
         this.name = name;
+        subCategories=new HashSet<Category>();
+        products=new HashSet<Product>();
     }
 
     public Integer getId() {
