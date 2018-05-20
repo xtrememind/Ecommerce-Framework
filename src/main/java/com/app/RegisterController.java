@@ -2,6 +2,7 @@ package com.app;
 
 import com.ecf.authentication.UserProxyAuthentication;
 import com.ecf.domain.Client;
+import com.ecf.registration.UserRegisterFactory;
 import com.ecf.registration.models.User;
 import com.ecf.validation.RangeValidator;
 import com.ecf.validation.RequiredFieldValidator;
@@ -25,10 +26,10 @@ public class RegisterController {
     @PostMapping("/register")
     public String login(@ModelAttribute Client user, Model model) {
 
+        UserRegisterFactory userRegi=new UserRegisterFactory();
         List<String> errList =new ArrayList<String>();
 
        //Validation change of responsibilities
-
         //Validation for UserName
         Request request = new Request();
         request.setControlName("UserName");
@@ -45,6 +46,7 @@ public class RegisterController {
         request.setValue(user.password);
 
         RangeValidator rangeVali =new RangeValidator(4);
+
         requiredVali.setNextValidator(rangeVali);
         requiredVali.validate(request);
 
@@ -56,6 +58,7 @@ public class RegisterController {
             return "register";
         }
         else{
+            userRegi.createUser(user.getName(),user.getPassword(),user.getBillingAddress(),user.getShippingAddress(),"CLIENT");
             return "redirect:/";
         }
 
