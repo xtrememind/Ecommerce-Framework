@@ -65,9 +65,4 @@ public class ShoppingCart {
         }
         return sum;
     }
-
-    public void pay(IPaymentStrategy paymentMethod) {
-        double amount = calculateTotal();
-        paymentMethod.pay(amount);
-    }
 }

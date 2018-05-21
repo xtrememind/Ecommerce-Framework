@@ -10,8 +10,25 @@ public class Order {
     private Client client;
     private List<Item> items;
     private long totalAmount;
-
+    private String shippingAddress;
+    private String BillingAddress;
     public Order() {
+    }
+
+    public String getBillingAddress() {
+        return BillingAddress;
+    }
+
+    public void setBillingAddress(String billingAddress) {
+        BillingAddress = billingAddress;
+    }
+
+    public String getShippingAddress() {
+        return shippingAddress;
+    }
+
+    public void setShippingAddress(String shippingAddress) {
+        this.shippingAddress = shippingAddress;
     }
 
     public Integer getId() {

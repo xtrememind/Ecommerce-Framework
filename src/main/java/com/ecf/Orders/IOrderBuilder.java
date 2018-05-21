@@ -10,9 +10,9 @@ public interface IOrderBuilder {
 
     public void buildOrderItems(List<Item> items);
 
-    public void buildShippingDetails();
+    public void buildShippingDetails(String shippingAddress);
 
-    public void buildBillingDetails();
+    public void buildBillingDetails(String billingAddress);
 
     public Order getOrder();
 

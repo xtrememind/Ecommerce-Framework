@@ -1,5 +1,6 @@
 package com.ecf.Orders;
 
+import com.ecf.Repository.OrderRepository;
 import com.ecf.ShoppingCart.Item;
 import com.ecf.domain.Client;
 
@@ -23,13 +24,13 @@ public class OrderBuilder implements IOrderBuilder {
     }
 
     @Override
-    public void buildShippingDetails() {
-
+    public void buildShippingDetails(String shippingAddress) {
+        order.setShippingAddress(shippingAddress);
     }
 
     @Override
-    public void buildBillingDetails() {
-
+    public void buildBillingDetails(String billingAddress) {
+        order.setBillingAddress(billingAddress);
     }
 
     @Override
@@ -39,6 +40,7 @@ public class OrderBuilder implements IOrderBuilder {
 
     @Override
     public Order saveOrder() {
+        OrderRepository.getInstance().addOrder(order);
         return null;
     }
 }
